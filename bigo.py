@@ -37,7 +37,6 @@ def length_of_longest_substring_n3(s):
                 frequency[index] += 1
                 if frequency[index] > 1:
                     repeat = True
-                    break
             if not repeat:
                 if len(substring) > max_length:
                     max_length = len(substring)
