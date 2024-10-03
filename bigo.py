@@ -27,13 +27,24 @@ def length_of_longest_substring_n3(s):
     post: Returns an integer >= 0 representing the length of the longest substring
           in s that contains no repeating characters.
     """
-    for i in range(len(s)):
+
+      max_length = 0
+      for i in range(len(s)):
         for j in range(i, len(s)):
             frequency = [0] * 265
             substring = s[i:j+1]
+            repeat = False
             for char in substring:
                 index = ord(char)
                 frequency[index] += 1
+                if frequency[index] > 1:
+                    repeat = True
+                    break
+            if not repeat:
+                if len(substring) > max_length:
+                    max_length = len(substring)
+    return max_length
+            
 
 
 
