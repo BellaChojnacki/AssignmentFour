@@ -41,7 +41,7 @@ def length_of_longest_substring_n3(s):
                 if len(substring) > max_length:
                     max_length = len(substring)
     return max_length
-            
+
 def length_of_longest_substring_n2(s):
     """
     Finds the length of the longest substring without repeating characters
@@ -56,7 +56,7 @@ def length_of_longest_substring_n2(s):
     max_length = 0
     for i in range(len(s)):
         frequency = [0] * 256
-        repeat = False 
+        repeat = False
         for j in range(i, len(s)):
             index = ord(s[j])
             frequency[index] += 1
