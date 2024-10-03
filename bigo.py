@@ -17,7 +17,6 @@ UT EID 2:
 """
 
 
-# TODO: implement this function. You may delete this comment when you are done.
 def length_of_longest_substring_n3(s):
     """
     Finds the length of the longest substring without repeating characters
@@ -68,7 +67,6 @@ def length_of_longest_substring_n2(s):
             repeat = False
             if frequency[index] > 1:
                     repeat = True
-                    break
             if not repeat:
                 if j - i + 1 > max_length:
                     max_length = j - i + 1
@@ -90,4 +88,17 @@ def length_of_longest_substring_n(s):
     post: Returns an integer >= 0 representing the length of the longest substring
           in s that contains no repeating characters.
     """
-    pass
+    max_length = 0
+    for i in range(len(s)):
+        frequency = [0] * 256
+        for j in range(i, len(s)):
+            index = ord(s[j])
+            frequency[index] += 1
+            repeat = False
+            if frequency[index] > 1:
+                    repeat = True
+                    break
+            if not repeat:
+                if j - i + 1 > max_length:
+                    max_length = j - i + 1
+    return max_length
